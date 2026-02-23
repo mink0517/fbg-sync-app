@@ -252,7 +252,7 @@ def compute_T_S(df: pd.DataFrame, temp_col: str, vol_col: str) -> pd.DataFrame:
     ds_pm = (out[vol_col] - vol0) * 1000.0
 
     T_raw = dt_pm / 9.2
-    S_raw = (ds_pm - T_raw) / 0.83
+    S_raw = (ds_pm - dt_pm) / 0.83
 
     # ✅ 중간값도 컬럼으로 남기기
     out["dt_pm"] = dt_pm      # 9.2 적용 전 (온도 파장변화량*1000)
